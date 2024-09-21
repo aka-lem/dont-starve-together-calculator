@@ -33,14 +33,26 @@ function validateInput(event, input) {
   if (event.key >= "0" && event.key <= "9") {
     return true;
   }
-  if(event.key == "ArrowUp" && input.value > 0) {
-    input.value++;
-  }
-  if(event.key == "ArrowDown" && input.value > 1) {
-    input.value--;
-  }
   return false;
 }
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === 'Enter') {
+      document.getElementById('calculate_button').click();
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  const input = document.getElementById('days');
+  const currentValue = parseInt(input.value) || 0; 
+  if (event.key === "ArrowUp") {
+      event.preventDefault();
+      input.value = Math.max(currentValue + 1, 1); 
+  } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      input.value = Math.max(currentValue - 1, 1); 
+  }
+});
 
 window.viewCalculation = viewCalculation;
 window.validateInput = validateInput;

@@ -7,8 +7,8 @@
 </head>
 <body>
   <h1>Don't Starve Together Day Calculator</h1>
-  <input type="number" id="days" min="1" onkeydown="return validateInput(event, this)" />
-  <button type="button" onclick="viewCalculation()">Calculate</button>
+  <input  id="days" type="number" min="1" onkeydown="return validateInput(event, this)" />
+  <button id="calculate_button" type="button" onclick="viewCalculation()">Calculate</button>
 
   <div id="calculations" style="display: none">
     <h2>The current day is: Day <span id="current_day"></span></h2>
