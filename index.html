@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Don't Starve Together Day Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js" async></script>
+</head>
+<body>
+  <h1>Don't Starve Together Day Calculator</h1>
+  <input type="number" value="0" id="days" />
+  <button type="button" onclick="viewCalculation()">Calculate</button>
+
+  <div id="calculations" style="display: none">
+    <h2>The current day is: Day <span id="current_day"></span></h2>
+    <p>You have completed <span id="years"></span> years</p>
+    <p>
+      It is currently the <span id="season_day"></span> day of
+      <span id="current_season"></span>
+    </p>
+  </div>
+
+  <div id="no_calculation" style="display: none">
+    <h2>Please enter a valid day number</h2>
+  </div>
+</body>
+</html>
