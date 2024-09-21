@@ -2,9 +2,9 @@ import Day from "./day.js";
 
 function viewCalculation() {
   var totalDays = document.getElementById("days").value;
-  var calculations = document.getElementById("calculations");
+  var calculationDisplay = document.getElementById("calculations");
   if(totalDays > 0) {
-    calculations.style.display = "block";
+    calculationDisplay.style.display = "block";
   } else {
     return;
   }
@@ -32,6 +32,12 @@ function validateInput(event, input) {
   }
   if (event.key >= "0" && event.key <= "9") {
     return true;
+  }
+  if(event.key == "ArrowUp" && input.value > 0) {
+    input.value++;
+  }
+  if(event.key == "ArrowDown" && input.value > 1) {
+    input.value--;
   }
   return false;
 }
