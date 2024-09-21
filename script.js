@@ -15,6 +15,8 @@ function viewCalculation() {
     currentSeasonElements[i].innerHTML = day.getCurrentSeason();
   }
   document.getElementById("days_left_of_season").innerHTML = day.getDaysLeftOfSeason();
+  document.getElementById("next_season").innerHTML = day.getNextSeason();
+  document.getElementById("day_of_next_season").innerHTML = day.getDayOfNextSeason();
 
   if (totalDays > 0) {
     Z.style.display = "none";

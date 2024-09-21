@@ -19,6 +19,8 @@ class Day {
     this.currentSeason = this.#setCurrentSeason();
     this.years = this.#setYears();
     this.daysLeftOfSeason = this.#setDaysLeftOfSeason();
+    this.nextSeason = this.#setNextSeason();
+    this.dayOfNextSeason = this.#setDayOfNextSeason();
   }
 
   #setCurrentSeasonDay() {
@@ -75,6 +77,22 @@ class Day {
     }
   }
 
+  #setNextSeason(){
+    if(this.currentSeason == this.#autumn){
+      return this.#winter;
+    } else if(this.currentSeason == this.#winter){
+      return this.#spring;
+    } else if(this.currentSeason == this.#spring){
+      return this.#summer;
+    } else {
+      return this.#autumn;
+    }
+  }
+
+  #setDayOfNextSeason(){
+    return this.daysLeftOfSeason + this.days
+  }
+
   getDaysLeftOfSeason(){
     return this.daysLeftOfSeason;
   }
@@ -101,6 +119,14 @@ class Day {
 
   getCurrentSeasonDayWithOrdinalIndicator(){
     return this.currentSeasonDayWithOrdInd;
+  }
+
+  getNextSeason() {
+    return this.nextSeason;
+  }
+
+  getDayOfNextSeason(){
+    return this.dayOfNextSeason;
   }
 }
 
