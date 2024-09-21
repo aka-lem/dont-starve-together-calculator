@@ -1,7 +1,6 @@
 import Day from "./day.js";
 
 function viewCalculation() {
-  console.log("viewCalculation called");
   var totalDays = document.getElementById("days").value;
   var T = document.getElementById("calculations");
   var Z = document.getElementById("no_calculation");
@@ -10,8 +9,12 @@ function viewCalculation() {
 
   document.getElementById("current_day").innerHTML = totalDays;
   document.getElementById("years").innerHTML = day.getYears();
-  document.getElementById("season_day").innerHTML = day.getCurrentSeasonDay();
-  document.getElementById("current_season").innerHTML = day.getCurrentSeason();
+  document.getElementById("season_day").innerHTML = day.getCurrentSeasonDayWithOrdinalIndicator();
+  var currentSeasonElements = document.getElementsByClassName("current_season");
+  for (var i = 0; i < currentSeasonElements.length; i++) {
+    currentSeasonElements[i].innerHTML = day.getCurrentSeason();
+  }
+  document.getElementById("days_left_of_season").innerHTML = day.getDaysLeftOfSeason();
 
   if (totalDays > 0) {
     Z.style.display = "none";
