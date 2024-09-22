@@ -7,9 +7,10 @@
 </head>
 <body>
   <h1>Don't Starve Together Day Calculator</h1>
-  <input  id="days" type="number" min="1" onkeydown="return validateInput(event, this)" />
+  <div class="input_and_buttons">
+  <input  id="days" type="number" min="1" onkeydown="return validateInput(event, this)"/>
   <button id="calculate_button" type="button" onclick="viewCalculation()">Calculate</button>
-
+  </div>
   <div id="calculations" style="display: none">
     <div id="day_calculations" class="calculations">
       <h2>Day Calculations</h2>
@@ -24,7 +25,7 @@
     <div id="moon_calculations" class="calculations">
       <h2>Moon Calculations</h2>
       <p>Tonight will be a XXX moon</p>
-
+      <p>There are XXX days until the next full moon</p>
     </div>
   </div>
 
