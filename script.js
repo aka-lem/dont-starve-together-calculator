@@ -11,7 +11,6 @@ function viewCalculation() {
 
   var day = new Day(Number(totalDays));
 
-  document.getElementById("current_day").innerHTML = totalDays;
   document.getElementById("years").innerHTML = day.getYears();
   document.getElementById("season_day").innerHTML = day.getCurrentSeasonDayWithOrdinalIndicator();
   var currentSeasonElements = document.getElementsByClassName("current_season");
