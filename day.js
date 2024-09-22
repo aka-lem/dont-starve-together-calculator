@@ -9,10 +9,14 @@ class Day {
   #winter = "Winter";
   #spring = "Spring";
   #summer = "Summer";
+  #EXTRA_DAY = 1;
 
   constructor(days) {
     this.days = days;
     this.yearProgress = days % this.#daysInAYear;
+    if(this.yearProgress == 0){
+      this.yearProgress = this.#daysInAYear;
+    }
     this.currentSeasonDay = this.#setCurrentSeasonDay();
     this.ordinalIndicator = this.#setOrdinalIndicator();
     this.currentSeasonDayWithOrdInd = this.#setDayWithOrdinalIndicator();
@@ -90,7 +94,11 @@ class Day {
   }
 
   #setDayOfNextSeason(){
-    return this.daysLeftOfSeason + this.days
+    return this.daysLeftOfSeason + this.days + this.#EXTRA_DAY
+  }
+
+  getDays(){
+    return this.days;
   }
 
   getDaysLeftOfSeason(){
