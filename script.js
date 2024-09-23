@@ -26,6 +26,7 @@ function viewCalculation() {
 
   document.getElementById("moon_phase").innerHTML = moon.getMoonPhase();
   document.getElementById("days_until_full_moon").innerHTML = moon.getDaysUntilNextFullMoon();
+  document.getElementById("next_five_moons").innerHTML = moon.getNextFiveMoonPhases();
 }
 
 function validateInput(event, input) {
