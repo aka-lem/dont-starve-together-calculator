@@ -1,4 +1,16 @@
 class Day {
+
+  #days;
+  #yearProgress;
+  #currentSeasonDay;
+  #currentSeason;
+  #daysLeftOfSeason;
+  #nextSeason;
+  #ordinalIndicator;
+  #currentSeasonDayWithOrdInd;
+  #years;
+  #dayOfNextSeason;
+
   #autumnSpringDayCounts = 20;
   #winterSummerDayCounts = 15;
   #daysInAYear = 70;
@@ -9,48 +21,57 @@ class Day {
   #winter = "Winter";
   #spring = "Spring";
   #summer = "Summer";
+  #extraDay = 1;
 
   constructor(days) {
-    this.days = days;
-    this.yearProgress = days % this.#daysInAYear;
-    this.currentSeasonDay = this.#setCurrentSeasonDay();
-    this.ordinalIndicator = this.#setOrdinalIndicator();
-    this.currentSeasonDayWithOrdInd = this.#setDayWithOrdinalIndicator();
-    this.currentSeason = this.#setCurrentSeason();
-    this.years = this.#setYears();
-    this.daysLeftOfSeason = this.#setDaysLeftOfSeason();
-    this.nextSeason = this.#setNextSeason();
-    this.dayOfNextSeason = this.#setDayOfNextSeason();
+    this.#days = days;
+    this.#yearProgress = this.#setYearProgress();
+    this.#currentSeasonDay = this.#setCurrentSeasonDay();
+    this.#currentSeason = this.#setCurrentSeason();
+    this.#daysLeftOfSeason = this.#setDaysLeftOfSeason();
+    this.#nextSeason = this.#setNextSeason();
+    this.#ordinalIndicator = this.#setOrdinalIndicator();
+    this.#currentSeasonDayWithOrdInd = this.#setDayWithOrdinalIndicator();
+    this.#years = this.#setYears();
+    this.#dayOfNextSeason = this.#setDayOfNextSeason();
+  }
+
+  #setYearProgress() {
+    var yearProgress = this.#days % this.#daysInAYear;
+    if (yearProgress == 0) {
+      yearProgress = this.#daysInAYear;
+    }
+    return yearProgress;
   }
 
   #setCurrentSeasonDay() {
     let currentDay = 0;
-    if (this.yearProgress > this.#lastDayOfSpring) {
-      currentDay = this.yearProgress - this.#lastDayOfSpring;
-    } else if (this.yearProgress > this.#lastDayOfWinter) {
-      currentDay = this.yearProgress - this.#lastDayOfWinter;
-    } else if (this.yearProgress > this.#lastDayOfAutumn) {
-      currentDay = this.yearProgress - this.#lastDayOfAutumn;
+    if (this.#yearProgress > this.#lastDayOfSpring) {
+      currentDay = this.#yearProgress - this.#lastDayOfSpring;
+    } else if (this.#yearProgress > this.#lastDayOfWinter) {
+      currentDay = this.#yearProgress - this.#lastDayOfWinter;
+    } else if (this.#yearProgress > this.#lastDayOfAutumn) {
+      currentDay = this.#yearProgress - this.#lastDayOfAutumn;
     } else {
-      currentDay = this.yearProgress;
+      currentDay = this.#yearProgress;
     }
     return currentDay;
   }
 
   #setDayWithOrdinalIndicator() {
-    return this.currentSeasonDay + this.ordinalIndicator;
+    return this.#currentSeasonDay + this.#ordinalIndicator;
   }
 
   #setYears() {
-    return Math.floor(this.days / this.#daysInAYear);
+    return Math.floor(this.#days / this.#daysInAYear);
   }
 
   #setCurrentSeason() {
-    if (this.yearProgress > this.#lastDayOfSpring) {
+    if (this.#yearProgress > this.#lastDayOfSpring) {
       return this.#summer;
-    } else if (this.yearProgress > this.#lastDayOfWinter) {
+    } else if (this.#yearProgress > this.#lastDayOfWinter) {
       return this.#spring;
-    } else if (this.yearProgress > this.#lastDayOfAutumn) {
+    } else if (this.#yearProgress > this.#lastDayOfAutumn) {
       return this.#winter;
     } else {
       return this.#autumn;
@@ -58,75 +79,82 @@ class Day {
   }
 
   #setOrdinalIndicator() {
-    if (this.currentSeasonDay === 1) {
+    if (this.#currentSeasonDay === 1) {
       return "st";
-    } else if (this.currentSeasonDay === 2) {
+    } else if (this.#currentSeasonDay === 2) {
       return "nd";
-    } else if (this.currentSeasonDay === 3) {
+    } else if (this.#currentSeasonDay === 3) {
       return "rd";
     } else {
       return "th";
     }
   }
 
-  #setDaysLeftOfSeason(){
-    if(this.currentSeason == this.#autumn || this.currentSeason == this.#spring){
-      return this.#autumnSpringDayCounts - this.currentSeasonDay;
+  #setDaysLeftOfSeason() {
+    if (
+      this.#currentSeason == this.#autumn ||
+      this.#currentSeason == this.#spring
+    ) {
+      return this.#autumnSpringDayCounts - this.#currentSeasonDay;
     } else {
-      return this.#winterSummerDayCounts - this.currentSeasonDay;
+      return this.#winterSummerDayCounts - this.#currentSeasonDay;
     }
   }
 
-  #setNextSeason(){
-    if(this.currentSeason == this.#autumn){
+  #setNextSeason() {
+    if (this.#currentSeason == this.#autumn) {
       return this.#winter;
-    } else if(this.currentSeason == this.#winter){
+    } else if (this.#currentSeason == this.#winter) {
       return this.#spring;
-    } else if(this.currentSeason == this.#spring){
+    } else if (this.#currentSeason == this.#spring) {
       return this.#summer;
     } else {
       return this.#autumn;
     }
   }
 
-  #setDayOfNextSeason(){
-    return this.daysLeftOfSeason + this.days
+  #setDayOfNextSeason() {
+    return this.#daysLeftOfSeason + this.#days + this.#extraDay;
   }
 
-  getDaysLeftOfSeason(){
-    return this.daysLeftOfSeason;
+  getDays() {
+    return this.#days;
+  }
+
+  getDaysLeftOfSeason() {
+    return this.#daysLeftOfSeason;
   }
 
   getYearProgress() {
-    return this.yearProgress;
+    return this.#yearProgress;
   }
 
   getCurrentSeasonDay() {
-    return this.currentSeasonDay;
+    return this.#currentSeasonDay;
   }
 
   getOrdinalIndicator() {
-    return this.ordinalIndicator;
+    return this.#ordinalIndicator;
   }
 
   getCurrentSeason() {
-    return this.currentSeason;
+    return this.#currentSeason;
   }
 
   getYears() {
-    return this.years;
+    return this.#years;
   }
 
-  getCurrentSeasonDayWithOrdinalIndicator(){
-    return this.currentSeasonDayWithOrdInd;
+  getCurrentSeasonDayWithOrdinalIndicator() {
+    return this.#currentSeasonDayWithOrdInd;
   }
 
   getNextSeason() {
-    return this.nextSeason;
+    return this.#nextSeason;
   }
 
-  getDayOfNextSeason(){
-    return this.dayOfNextSeason;
+  getDayOfNextSeason() {
+    return this.#dayOfNextSeason;
   }
 }
 

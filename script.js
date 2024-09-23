@@ -1,4 +1,5 @@
 import Day from "./day.js";
+import Moon from "./moon.js"
 
 function viewCalculation() {
   var totalDays = document.getElementById("days").value;
@@ -20,6 +21,11 @@ function viewCalculation() {
   document.getElementById("days_left_of_season").innerHTML = day.getDaysLeftOfSeason();
   document.getElementById("next_season").innerHTML = day.getNextSeason();
   document.getElementById("day_of_next_season").innerHTML = day.getDayOfNextSeason();
+
+  var moon = new Moon(day);
+
+  document.getElementById("moon_phase").innerHTML = moon.getMoonPhase();
+  document.getElementById("days_until_full_moon").innerHTML = moon.getDaysUntilNextFullMoon();
 }
 
 function validateInput(event, input) {

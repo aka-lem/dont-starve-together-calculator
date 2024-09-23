@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Don't Starve Together Day Calculator</title>
+  <title>Don't Starve Together Calculator</title>
   <link rel="stylesheet" href="style.css" />
   <script type="module" src="script.js" async></script>
 </head>
 <body>
-  <h1>Don't Starve Together Day Calculator</h1>
+  <h1>Don't Starve Together Calculator</h1>
   <div class="input_and_buttons">
   <input  id="days" type="number" min="1" onkeydown="return validateInput(event, this)"/>
   <button id="calculate_button" type="button" onclick="viewCalculation()">Calculate</button>
@@ -24,13 +24,13 @@
 
     <div id="moon_calculations" class="calculations">
       <h2>Moon Calculations</h2>
-      <p>Tonight will be a XXX moon</p>
-      <p>There are XXX days until the next full moon</p>
+      <p>Tonight will be a <span id="moon_phase"></span></p>
+      <p>There are <span id="days_until_full_moon"></span> days until the next full moon</p>
     </div>
   </div>
 
   <footer>
-    <img src="/Drawing.png" alt="Description of the image">
+    <img src="Drawing.png" alt="My amazing friends drew themselves as our Don't Starve Together characters">
   </footer>
 </body>
 </html>
