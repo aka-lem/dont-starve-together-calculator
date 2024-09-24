@@ -12,7 +12,7 @@
   <button id="calculate_button" type="button" onclick="viewCalculation()">Calculate</button>
   </div>
   <div id="calculations" style="display: none">
-    <div id="day_calculations" class="calculations">
+    <div id="day_calculations" class="calculation_display">
       <h2>Day Calculations</h2>
       <p>You have completed <span id="years"></span> years</p>
       <p>
@@ -22,11 +22,12 @@
       <p>The next season: <span id="next_season"></span>, will start on day <span id="day_of_next_season"></span></p>
     </div>
 
-    <div id="moon_calculations" class="calculations">
+    <div id="moon_calculations" class="calculation_display">
       <h2>Moon Calculations</h2>
       <p>Tonight will be a <span id="moon_phase"></span></p>
       <p>There are <span id="days_until_full_moon"></span> days until the next full moon</p>
-      <p> The Next Five Days will be: <span id="next_five_moons"></span></p>
+      <p> The Next Five Days will be: </p>
+      <span id="next_five_moons"></span>
     </div>
   </div>
 

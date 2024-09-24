@@ -34,8 +34,16 @@ button {
     padding: 5px;
 }
 
-.calculations{
-    padding-top: 10px;
+#day_calculations{
+    float: left;
+    width: 500px;
+    padding-left: 100px;
+}
+
+#moon_calculations{
+    float: right;
+    width: 500px;
+    padding-right: 100px;
 }
 
 .input_and_buttons{
