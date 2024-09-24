@@ -40,16 +40,16 @@ button {
     padding: 5px;
 }
 
-#day_calculations{
-    float: left;
-    width: 500px;
-    padding-left: 100px;
+.container{
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
 }
 
-#moon_calculations{
-    float: right;
-    width: 500px;
-    padding-right: 100px;
+.calculation_display{
+    width: 350px;          
+    height: 200px; 
+    padding: 20px;
+    margin: 10px;
 }
 
 .input_and_buttons{
