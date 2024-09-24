@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'BigDontStarve'; 
+    src: url('assets/fonts/bigdonstarve.ttf'); 
+}
+
 h1 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'BigDontStarve';
     text-align: center;
+    font-size: 70px;
 }
 
 body {
