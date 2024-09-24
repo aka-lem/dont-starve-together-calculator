@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Don't Starve Together Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="script.js" async></script>
-</head>
-<body>
-  <h1>Don't Starve Together Calculator</h1>
-  <div class="input_and_buttons">
-  <input  id="days" type="number" min="1" onkeydown="return validateInput(event, this)"/>
-  <button id="calculate_button" type="button" onclick="viewCalculation()">Calculate</button>
-  </div>
-  <div id="calculations" style="display: none">
-    <div id="day_calculations" class="calculations">
-      <h2>Day Calculations</h2>
-      <p>You have completed <span id="years"></span> years</p>
-      <p>
-        It is currently the <span id="season_day"></span> day of <span class="current_season"></span>
-      </p>
-      <p>There are <span id="days_left_of_season"></span> days left of <span class="current_season"></span> </p>
-      <p>The next season: <span id="next_season"></span>, will start on day <span id="day_of_next_season"></span></p>
+  <head>
+    <title>Don't Starve Together Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js" async></script>
+  </head>
+  <body>
+    <h1>Don't Starve Together Calculator</h1>
+    <div class="input_and_buttons">
+      <input
+        id="days"
+        type="number"
+        min="1"
+        onkeydown="return validateInput(event, this)"
+      />
+      <button id="calculate_button" type="button" onclick="viewCalculation()">
+        Calculate
+      </button>
+    </div>
+    <div id="calculations" style="display: none">
+      <div class="container">
+        <div id="day_calculations" class="calculation_display">
+          <h2>Day Calculations</h2>
+          <p>You have completed <span id="years"></span> years</p>
+          <p>
+            It is currently the <span id="season_day"></span> day of
+            <span class="current_season"></span>
+          </p>
+          <p>
+            There are <span id="days_left_of_season"></span> days left of
+            <span class="current_season"></span>
+          </p>
+          <p>
+            The next season: <span id="next_season"></span>, will start on day
+            <span id="day_of_next_season"></span>
+          </p>
+        </div>
+
+        <div id="moon_calculations" class="calculation_display">
+          <h2>Moon Calculations</h2>
+          <p>Tonight will be a <span id="moon_phase"></span></p>
+          <p>
+            There are <span id="days_until_full_moon"></span> days until the
+            next full moon
+          </p>
+          <p>The Next Five Days will be:</p>
+          <span id="next_five_moons"></span>
+        </div>
+      </div>
     </div>
 
-    <div id="moon_calculations" class="calculations">
-      <h2>Moon Calculations</h2>
-      <p>Tonight will be a <span id="moon_phase"></span></p>
-      <p>There are <span id="days_until_full_moon"></span> days until the next full moon</p>
-      <p> The Next Five Days will be: <span id="next_five_moons"></span></p>
-    </div>
-  </div>
-
-  <footer>
-    <img src="Drawing.png" alt="My amazing friends drew themselves as our Don't Starve Together characters">
-  </footer>
-</body>
+    <footer>
+      <img
+        src="assets/images/Drawing.png"
+        alt="My amazing friends drew themselves as our Don't Starve Together characters"
+      />
+    </footer>
+  </body>
 </html>
