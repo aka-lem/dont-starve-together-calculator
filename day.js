@@ -156,6 +156,18 @@ class Day {
   getDayOfNextSeason() {
     return this.#dayOfNextSeason;
   }
+
+  getSeasonIconPath(){
+    if(this.#currentSeason == this.#autumn){
+      return "./assets/images/season icons/autumn.png";
+    } else if(this.#currentSeason == this.#spring){
+      return "./assets/images/season icons/spring.png";
+    } else if(this.#currentSeason == this.#summer) {
+      return "./assets/images/season icons/summer.png";
+    } else {
+      return "./assets/images/season icons/winter.png";
+    }
+  }
 }
 
 export default Day;

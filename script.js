@@ -11,6 +11,8 @@ function viewCalculation() {
   }
 
   var day = new Day(Number(totalDays));
+  var seasonIcon = document.getElementById("season_icon");
+  seasonIcon.src = day.getSeasonIconPath();
 
   document.getElementById("years").innerHTML = day.getYears();
   document.getElementById("season_day").innerHTML = day.getCurrentSeasonDayWithOrdinalIndicator();
@@ -23,6 +25,8 @@ function viewCalculation() {
   document.getElementById("day_of_next_season").innerHTML = day.getDayOfNextSeason();
 
   var moon = new Moon(day);
+  var moonIcon = document.getElementById("moon_icon");
+  moonIcon.src = moon.getMoonIconPath();
 
   document.getElementById("moon_phase").innerHTML = moon.getMoonPhase();
   document.getElementById("days_until_full_moon").innerHTML = moon.getDaysUntilNextFullMoon();

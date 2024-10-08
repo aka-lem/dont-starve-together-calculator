@@ -91,6 +91,20 @@ class Moon {
     getNextFiveMoonPhases(){
         return this.#nextFiveMoonPhases;
     }
+
+    getMoonIconPath(){
+        if(this.#moonPhase == this.#newMoon){
+            return "./assets/images/moon icons/newmoon.png";
+        } else if(this.#moonPhase == this.#halfMoon){
+            return "./assets/images/moon icons/halfmoon.png";
+        } else if(this.#moonPhase == this.#waxingCrescentMoon || this.#moonPhase == this.#waningCrescentMoon){
+            return "./assets/images/moon icons/crescentmoon.png";
+        } else if(this.#moonPhase == this.#waxingGibbousMoon || this.#moonPhase == this.#waxingGibbousMoon){
+            return "./assets/images/moon icons/gibbousmoon.png";
+        } else{
+            return "./assets/images/moon icons/fullmoon.png";
+        }
+    }
 }
 
 export default Moon;
