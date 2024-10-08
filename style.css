@@ -5,8 +5,8 @@
 
 h1 {
     font-family: 'BigDontStarve';
-    text-align: center;
     font-size: 70px;
+    margin: 0;
 }
 
 body {
@@ -50,6 +50,7 @@ button {
     height: 200px; 
     padding: 20px;
     margin: 10px;
+    line-height: 0.5;
 }
 
 .input_and_buttons{
