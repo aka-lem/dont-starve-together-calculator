@@ -26,11 +26,14 @@ function viewCalculation() {
 
   var moon = new Moon(day);
   var moonIcon = document.getElementById("moon_icon");
-  moonIcon.src = moon.getMoonIconPath();
+  moonIcon.src = moon.getMoonIconPath(moon.getMoonPhase());
 
   document.getElementById("moon_phase").innerHTML = moon.getMoonPhase();
   document.getElementById("days_until_full_moon").innerHTML = moon.getDaysUntilNextFullMoon();
-  document.getElementById("next_five_moons").innerHTML = moon.getNextFiveMoonPhases();
+  var nextFiveMoonElements = document.getElementsByClassName("next_moons");
+  for (var i = 0; i < nextFiveMoonElements.length; i++) {
+    nextFiveMoonElements[i].src = moon.getMoonIconPath(moon.getNextFiveMoonPhases()[i]);
+  }
 }
 
 function validateInput(event, input) {

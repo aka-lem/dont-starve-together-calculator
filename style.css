@@ -50,7 +50,7 @@ button {
     height: 200px; 
     padding: 20px;
     margin: 10px;
-    line-height: 0.5;
+    line-height: 0.8;
 }
 
 .input_and_buttons{
@@ -62,4 +62,13 @@ button {
 .icon{
     width: 200px;          
     height: 200px; 
+}
+
+.next_moons{
+    width: 13%;
+    height: auto;
+}
+
+#next_five_moons{
+    padding-top: 1px;
 }
