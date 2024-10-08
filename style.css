@@ -48,9 +48,8 @@ button {
 .calculation_display{
     width: 350px;          
     height: 200px; 
-    padding: 20px;
     margin: 10px;
-    line-height: 0.8;
+    line-height: 0.6;
 }
 
 .input_and_buttons{
