@@ -58,6 +58,10 @@ button {
     align-items: center;
 }
 
+.banner{
+    width: 550px;
+}
+
 .icon{
     width: 200px;          
     height: 200px; 
